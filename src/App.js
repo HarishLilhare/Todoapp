@@ -111,9 +111,9 @@ class App extends Component {
             placeholder='Enter Task...'
             required
           />
-          <div>
+
             <button onClick={this.handleAddTodo}>Add Task</button>
-          </div>
+          
         </div>
 
         {filteredTodos.length > 0 ? (
@@ -123,16 +123,18 @@ class App extends Component {
                 key={todo.id}
                 className={todo.completed ? 'completed' : 'pending'}
               >
-                <div>
-                  <p>{todo.task}</p>
+                <div className='button-task'>
+                <button onClick={() => this.handleToggleCompleted(todo.id)}>
+                    {todo.completed ? <CheckCircle /> : <ArrowRepeat />}
+                  </button>
+                  <p className='task'>{todo.task}</p>
                 </div>
+
                 <div>
                   <button onClick={() => this.handleDeleteTodo(todo.id)}>
                     <Trash />
                   </button>
-                  <button onClick={() => this.handleToggleCompleted(todo.id)}>
-                    {todo.completed ? <CheckCircle /> : <ArrowRepeat />}
-                  </button>
+                 
                 </div>
               </li>
             ))}

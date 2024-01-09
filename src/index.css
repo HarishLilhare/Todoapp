@@ -78,20 +78,32 @@ h1 {
   align-items: center;
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
+  font-size: 16px;
+  font-weight: 700; 
+  
 }
-
+.button-task{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+}
+.task{
+  margin: 10px;
+}
 
 .todo-list li.completed {
   text-decoration: line-through;
-  color: black;
+  color: red; 
+  
 }
 
 
 .todo-list li.pending {
   text-decoration: none;
-  color: red;
+  color:black;
+  
 }
-
 
 .empty-message {
   color: #888;
